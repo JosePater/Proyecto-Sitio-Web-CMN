@@ -1,0 +1,61 @@
+{% extends "Home_CMN.html" %}
+{% block contenido %}
+    <!--Lo que esta dentro de este bloque es lo que reemplaza a lo que 
+        esta enmarcado dentro de esta mismo bloque en la plantilla padre
+    -->
+    <h2 class="subtitulo">Clientes registrados</h2>
+
+    <a class="enlace_boton" href="{{url_for('revision_tecnomecanica')}}" target="_self">Agregar</a>
+    <!--url_for se utiliza para direccionar el control del programa a
+    la ruta que acompaña el nombre de la función (es decir de HTML
+    a python).
+    -->
+
+    <table>
+        {% if clientesObtenidos != NULL %}
+        <form action="{{url_for('buscar_cliente_por_cedula')}}" method="POST">
+            <input type="text" id="buscar" name="buscar" placeholder="Buscar por cédula" required>
+            <!-- <button class="enlace_boton">Buscar</a> -->
+            <button type="submit" class="enlace_boton">Buscar</button>
+
+        </form>
+        {% endif %}
+    
+        <thead>
+            <form action="{{url_for('ordenar_cliente')}}" method="POST">
+                <tr class="encabezado_tablas">
+                    <td> <acronym title="Ordenar por cédula"><button class="btn_titulo_encabezado_tabla" name="filtro" value="cedula">Cédula</button></acronym></td>
+                    <td> <acronym title="Ordenar por nombre"><button class="btn_titulo_encabezado_tabla" name="filtro" value="nombre">Nombre</button></acronym></td>
+                    <td> <acronym title="Ordenar por apellido"><button class="btn_titulo_encabezado_tabla" name="filtro" value="apellido">Apellido</button></acronym></td>
+                    <td> <acronym title="Ordenar por teléfono"><button type="" class="btn_titulo_encabezado_tabla" name="filtro" value="telefono">Teléfono</button></acronym></td>
+                    <td> <acronym title="Ordenar por dirección"><button type="" class="btn_titulo_encabezado_tabla" name="filtro" value="direccion">Dirección</button></acronym></td>
+                    <td> <acronym title="Ordenar por correo"><button type="" class="btn_titulo_encabezado_tabla" name="filtro" value="email">Correo</button></acronym></td>
+                    <td class="th-boton">Editar</td>
+                    <td class="th-boton">Eliminar</td>
+            </tr>
+            </form>
+        </thead>
+        <tbody>
+            <!-- Datos obtenidos de return render_template("ConsultaClientes_Admin.html", clientesObtenidos = clientesConsultados) -->
+            {% for cliente in clientesObtenidos %}
+            <!--Este for es utilizado para crear los registros de manera dinámica, uno por cada cliente -->        
+            <tr>
+                <td>{{cliente[0]}}</td>
+                <td>{{cliente[1]}}</td>
+                <td>{{cliente[2]}}</td>
+                <td>{{cliente[3]}}</td>
+                <td>{{cliente[4]}}</td>
+                <td>{{cliente[5]}}</td>
+                
+                <td><a class="enlace_boton" href="{{url_for('editar_cliente', id=cliente[0])}}">Editar</a></td>
+                <td>
+                    <form action="{{url_for('eliminar_cliente')}}" method="POST">
+                        <input type="hidden" name="id" value="{{cliente[0]}}">
+                        <button type="submit" class="enlace_boton" id="boton_eliminar">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

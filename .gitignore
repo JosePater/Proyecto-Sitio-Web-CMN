@@ -1,0 +1,21 @@
+# Virtual environment
+venv/
+
+# Byte-compiled files
+*.pyc
+*.pyo
+__pycache__/
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+*.pyc
+
+# Flask specific
+instance/
+webapp.egg-info/
+
+# Personals
+NotasAvance.txt

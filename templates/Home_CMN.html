@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Conexión con CSS-->
+    <link rel="stylesheet" href="../static/Home_CMN.css">
+    <link rel="stylesheet" href="../static/Estilo_General.css">
+    
+    <title>Control de Motos del Norte C.D.A</title>
+</head>
+
+<body>
+    <!--Barra de navegación y portada-->
+    <div class="header">
+        <!--Barra de navegación: Inicio, Quiénes somos, Servicios, Preguntas frecuentes-->
+        <nav>
+            <ul class="menu">
+                <li>
+                    <img id="logoHome" src="../static/Imágenes/logo.png" alt="">
+                </li>
+
+                <!-- Función url_for(funcion) con la función que redirecciona a la página deseada -->
+                <li><a href="{{url_for('inicio')}}">Inicio</a></li>
+                <!-- target="marco": Para integrar el href dentro del marco-->
+                <li class="dropdown">
+                    <a href="{{url_for('quienes_somos')}}">Quiénes somos 👇</a>
+                    <!--Quiénes somos-->
+                    <div class="dropdown-content">
+                        <a href="{{url_for('quienes_somos')}}">Nosotros</a>
+                        <a href="{{url_for('quienes_somos')}}">Misión</a>
+                        <a href="{{url_for('quienes_somos')}}">Visión</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="{{url_for('revision_tecnomecanica')}}">Servicios 👇</a>
+                    <!--Servicios-->
+                    <div class="dropdown-content">
+                        <a href="{{url_for('revision_tecnomecanica')}}">Revisión Tecnomecánica</a>
+                        <a href="{{url_for('soat')}}" target="marco">SOAT</a>
+                        <link rel="stylesheet" href="../static/Estilo_General.css">
+                        <a href="{{url_for('admin')}}">Admin</a>
+                    </div>
+                </li>
+
+                <li><a href="{{url_for('preguntas_frecuentes')}}">Preguntas frecuentes</a></li>
+                <!--Preguntas frecuentes-->
+                <li><a href="https://api.whatsapp.com/send/?phone=%2B573182766536&text&app_absent=0" target="_blank">Contáctenos a nosotros</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- Carrusell - Portada -->
+
+    <!-- Bloque para mensajes -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    <!--aquí se pregunta si se recibió un mensaje y si no se ignora el resto de codigo-->
+    {% if messages %}
+            {% for category, message  in messages %}
+                {% if category == 'Advertencia' %}
+                    <div class="mensaje_advertencia">
+                        {{ category }},&nbsp;{{ message }}
+                    </div>
+                {% else %}
+                    <div class="mensaje_confirmacion">
+                        <!--Muestra el mensaje de éxito recibido-->
+                        {{ message }}
+                    </div>
+                {% endif %} 
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <!-- Bloque para las plantillas hijas -->
+    {% block carrusel %}
+    {% endblock %}
+
+
+    <!--Sesión para un marco-->
+    <section>
+        <!-- Así era solo con css:  <iframe id="Marco" src="" name="marco" frameborder="10" width="100%"></iframe> -->
+        <!--Contenido de otra plantilla -->
+        {% block contenido %}
+        {% endblock %}
+    </section>
+
+
+    <!--Bloque de la página-->
+    
+</body>
+<footer>
+    <div>
+        <h4>Popayán: Carrera 9 No 67N-132 Autopista Norte</h4>
+    </div>
+</footer>
+
+</html>

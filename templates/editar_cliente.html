@@ -1,0 +1,42 @@
+{% extends "Home_CMN.html" %}
+
+{% block contenido %}
+<body>
+    <!--Bloque de la página-->
+    <div class="formulario">
+        <h3 align="center">Actualización de datos</h3>
+
+        <!-- <form action="{{url_for('guardar_cliente')}}" method="POST"> -->
+        <form action="{{url_for('actualizar_cliente')}}"  method="post">
+            <!-- cada 'name' de las etiquetas  input recuerda los datos ingresados anteriormente-->
+
+            <label for="Cedula">Cédula</label>
+            <input value="{{cliente[0]}}" type="text" class="input" id="cedula" name="cedula" required><br>
+
+            <label for="Nombres">Nombres:</label>
+            <input value="{{cliente[1]}}" type="text" class="input" id="nombres" name="nombres" required><br>
+
+            <label for="Apellidos">Apellidos:</label>
+            <input value="{{cliente[2]}}" type="text" class="input"  id="apellidos" name="apellidos" required><br>
+
+            <label for="Telefono">Teléfono:</label>
+            <input value="{{cliente[3]}}" type="text" class="input"  id="telefono" name="telefono" required><br>
+
+            <label for="Direccion">Dirección:</label>
+            <input value="{{cliente[4]}}" type="text" class="input" id="direccion" name="direccion" required><br>
+
+            <label for="Correo">Correo:</label>
+            <input value="{{cliente[5]}}" type="text" class="input" id="correo" name="correo" required><br>
+
+            <!-- <input type="submit" id="BotonEnviar" value="Enviar"> -->
+            <button type="submit" class="enlace_boton">Guardar</button>
+            <a class="enlace_boton" href="{{url_for('admin')}}" target="_self">Volver</a>
+
+            <!-- Código necesario para almacenar la cédula del usuario por si se desea modificar la misma {Pater} -->
+            <input value="{{cc_primera}}" type="hidden" class="input" id="cc_primera" name="cc_primera" required><br>
+        </form>
+
+    </div>
+</body>
+
+{% endblock %}

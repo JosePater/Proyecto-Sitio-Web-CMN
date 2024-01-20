@@ -1,0 +1,86 @@
+{% extends "Home_CMN.html" %}
+
+{% block contenido %}
+<body>
+    <!--Bloque de la página-->
+    <div class="formulario">
+        <h3 align="center">Ingrese sus datos para apartar una cita con nosotros</h3>
+
+        <!-- <form action="{{url_for('guardar_cliente')}}" method="POST"> -->
+        <form action="{{url_for('guardar_cliente')}}" method="POST">
+            <!-- cada 'name' de las etiquetas  input recuerda los datos ingresados anteriormente-->
+
+            <label for="Cedula">Cédula</label>
+            <input type="text" id="cedula" name="cedula" placeholder="Cédula de ciudadanía" required><br>
+
+            <label for="Nombres">Nombres:</label>
+            <input type="text" id="nombres" name="nombres" placeholder="Nombres del solicitante" required><br>
+
+            <label for="Apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos del solicitante" required><br>
+
+            <label for="Telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" placeholder="312 456 7890" required><br>
+
+            <label for="Direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Calle 1 # 10 - 25"><br>
+
+            <label for="Correo">Correo:</label>
+            <input type="text" id="correo" name="correo" placeholder="correo@gmail.com"><br>
+
+            <!-- <input type="submit" id="BotonEnviar" value="Enviar"> -->
+            <button type="submit" class="enlace_boton">Guardar</button>
+            <a class="enlace_boton" href="{{url_for('admin')}}" target="_self">Volver</a>
+        </form>
+
+    </div>
+
+    <div class="formulario"> <!--Para que tome el mismo estilo que el formulario-->
+        <h3 align="center">Precios</h3>
+        <p>
+            El costo de la Revisión Técnico Mecánica y de Emisiones Contaminantes para tu moto depende del modelo de
+            tu vehículo.<br><br>
+
+            Las Tarifas de la RTM y EC de CDA MOTOLISTA para el año 2022 son las siguientes:<br><br>
+
+            Tarifa RTM Motos Modelos 2020 a 2022:<br>
+            $155,937.<br><br>
+
+            Tarifa RTM Motos Modelos 2015 a 2019:<br>
+
+            $156,237.<br><br>
+
+            Tarifa RTM Motos Modelos 2006 a 2014:<br>
+
+            $156,437.<br><br>
+
+            Tarifa RTM Motos Modelos 2005 y anteriores:<br>
+            $156,237.<br>
+        </p>
+    </div>
+</body>
+
+{% endblock %}
+            <!-- <label for="Placa">Placa</label>
+            <input type="text" id="placa" name="placa" placeholder="Ingrese la placa de la moto" required><br> -->
+
+            <!-- <label for="Marca">Marca</label>
+            <input type="text" id="marca" placeholder="Ingrese la marca. Ej: Pulsar" required><br>
+
+            <label for="Modelo">Modelo</label>
+            <input type="text" id="modelo" placeholder="Ingrese el modelo. Ej: 2022" required><br>
+
+            <label for="Linea">Línea</label>
+            <input type="text" id="linea" placeholder="Ej: Auteco, AKT, Yamaha" required><br>
+
+            <label for="Cilindraje">Cilindraje</label>
+            <input type="text" id="cilindraje" placeholder="Ej: 199cc" required><br>
+
+            <label for="Color">Color</label>
+            <input type="text" id="color" placeholder="Ej: Rojo" required><br>
+
+            <label for="NoMotor">Número del motor</label>
+            <input type="text" id="noMotor" placeholder="Ej:BTX1345345"><br>
+
+            <label for="NoChasis">Número del Chasis</label>
+            <input type="text" id="noChasis" placeholder="Ej: B234567"><br> -->

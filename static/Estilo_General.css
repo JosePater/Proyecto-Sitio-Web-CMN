@@ -1,0 +1,239 @@
+/*----------------------------- Página Revisión -----------------------------*/
+
+.formulario{
+    width: 40%;
+    background-color: #f0b466; /*Color de fondo*/
+    margin: 30px;
+    display: block; /*Para que se centre*/
+    margin-left: auto;   /*Lo mantiene...*/
+    margin-right: auto;  /*...centrado horizontalmente*/
+}
+
+
+input[type=text], select {
+    width: 60%;              /*Tamaño de los campos de textos*/
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 80%;
+    background-color: #4052f7;
+    color: white;
+    padding: 14px 20px;    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block; /*Centra el botón Enviar*/
+  }
+
+  #BotonEnviar{
+    margin-left: auto;   /*Lo mantiene...*/
+    margin-right: auto;  /*...centrado horizontalmente*/
+  }
+  
+  input[type=submit]:hover {
+    background-color: #09f715;
+  }
+  
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+ 
+  /*----------------------------- Página Preguntas Frecuentes -----------------------------*/
+  .container_question{
+    width: 40%;
+    margin-left: auto;   /*Lo mantiene...*/
+    margin-right: auto;  /*...centrado horizontalmente*/
+    background-color: #f0b466; /*Color de fondo*/
+    padding: 10px;
+}
+
+.container_question div{ /*Secciones de cada pregunta*/
+  padding: 5px;
+  margin: 5px;
+}
+
+.container_question div:hover{/*Cuando se para el mouse por las secciones de cada pregunta*/
+  background-color: #e2d9a2;
+  cursor: pointer; /*Manito como curso*/
+}
+
+  /*----------------------------- Página Quiénes somos -----------------------------*/
+  .container_about-us{
+    width: 40%;
+    margin-left: auto;   /*Lo mantiene...*/
+    margin-right: auto;  /*...centrado horizontalmente*/
+    background-color: #f1bd79; /*Color de fondo*/
+    padding: 10px;
+    align-items: flex-start;
+}
+
+.container_about-us div{ /*Secciones de cada pregunta*/
+  padding: 5px;
+  margin: 5px;
+}
+
+.container_about-us div:hover{/*Cuando se para el mouse por las secciones de cada pregunta*/
+  background-color: #ebe8d7;
+  cursor: pointer; /*Manito como curso*/
+  font-weight: bold;
+}
+
+
+  /*----------------------------- Página SOAT -----------------------------*/
+  .container_soat{
+    width: 40%;
+    margin-left: auto;   /*Lo mantiene...*/
+    margin-right: auto;  /*...centrado horizontalmente*/
+    background-color: #f1bd79; /*Color de fondo*/
+    padding: 10px;
+}
+#foto_soat{
+  display: block; /*Para que se centre*/
+  margin-left: auto;   /*Lo mantiene...*/
+  margin-right: auto;  /*...centrado horizontalmente*/
+}
+
+/*----------------------------- Estilo formulario de la consulta clientes (ConsultaClientes_Admin.html) -----------------------------*/
+/* Código para e botón eliminar de la plantilla ConsultaClientes_Admin.html */
+/* Da estilo a los títulos <h1> que tienen su atributo class=subtitulo */
+.subtitulo {
+  /*margin-left: 10px;*/
+  padding: 10px;
+  margin: 0;
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+  background-color: #d5d2cd;
+}
+
+button[type=submit] {
+  border-radius: 5px;
+  border-style: hidden;
+  margin-left: 8px;
+  background-color: rgb(184, 29, 8);
+  color: white;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: medium;
+}
+
+#buscador{
+  margin-left: 190px;
+  padding: 10px;
+}
+
+.enlace_boton:link,
+.enlace_boton:visited{
+  background-color: #f58b44;
+  color: white;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Cambia de color cuando se pasa el mouse */
+.enlace_boton:hover,
+.enlace_boton:active {
+  background-color:#223c89;
+  cursor: pointer; /*Manito como curso*/
+}
+
+/* Da un borde a los botones */
+.enlace_boton {
+  border-radius: 5px;
+  margin-left: 8px;
+  font-size: medium;
+}
+
+/* Da estilo a la tabla utilizada en la plantilla ConsultaClientes_Admin.html */
+table {
+  width: 95%;
+  margin-top: 8px;
+  border-collapse: collapse;
+}
+
+/*da estilo a los encabezados de la tabla utilizada en la
+plantilla clientes.html, pero solo de las columnas que
+tienen el atributo class=th-boton,
+es decir las columnas que contienen los botones "Editar"
+y "Eliminar" de cada registro de la tabla*/
+.th-boton{
+  width: 0%;
+}
+
+/* Da estilo a los encabezados y campos de la tabla
+utilizada en la plantilla ConsultaClientes_Admin.html*/
+th,
+td {
+  border-bottom: 1px solid rgb(224, 166, 108); /* Línea (rendón) abajo*/
+  border-left: 1px solid rgb(243, 160, 78); /* Línea (rendón) lateral LH*/
+  text-align: left;
+  padding: 2px;
+}
+
+
+/*Da estilo al pasar el mouse a los registros (filas) de la tabla utilizada en la plantilla ConsultaClientes_Admin.html*/
+tr:hover {
+  background-color: rgb(239, 219, 197);
+}
+
+.encabezado_tablas{
+  background-color:  rgb(239, 219, 197);
+  font-size: medium;
+  font-weight: bold;
+  padding: 2px;
+}
+
+/* ----- En_prueba  -----------*/
+td, tr .encabezado_tablas{ /* Centra el encabezado de las tablas*/
+  text-align: center;
+  border-left: 1px solid rgb(239, 219, 197); /* Línea (rendón) lateral LH*/
+}
+/* Al pasar el mouse */
+.encabezado_tablas td:hover {
+    background-color:  rgb(234, 185, 133); /*Color de fondo de cada palabra de la barra nav al pasar el mouse*/
+}
+
+
+/* Título encabezado tabla cliente (botón) */
+.btn_titulo_encabezado_tabla{
+  font-weight: bold;
+  background-color: rgb(239, 219, 197);
+  padding: 12px 40px;
+  margin:0;
+  display: inline-block;
+  border: 1px solid rgb(239, 219, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+/* Botones del encabezado de columnas de tbl_cliente */
+.btn_titulo_encabezado_tabla:hover{
+  background-color: rgb(234, 185, 133);
+  border: 1px solid rgb(234, 185, 133);
+}
+
+
+  /*----------------------------- Mensajes de eventos/advertencia-----------------------------*/
+.mensaje_advertencia{
+  background-color: #f49f9f;
+  padding: 8px;
+  margin: 5px;
+}
+
+.mensaje_confirmacion{
+  background-color: #b2c7ff;
+  padding: 8px;
+  margin: 5px;
+}
